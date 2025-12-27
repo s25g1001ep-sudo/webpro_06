@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %>の詳細</title>
+  <style>
+    body { background-color: #1b2e1b; color: #f1f8e9; padding: 20px; }
+    .card { background: #253b25; border-left: 10px solid #689f38; padding: 20px; border-radius: 4px; max-width: 600px; }
+    h2 { color: #c5e1a5; margin-top: 0; }
+    table { width: 100%; margin-bottom: 20px; }
+    th { text-align: left; width: 120px; color: #aed581; padding: 8px 0; }
+    td { padding: 8px 0; border-bottom: 1px solid #3e513e; }
+    .nav-links a { color: #c5e1a5; text-decoration: none; margin-right: 20px; font-size: 0.9em; }
+    .delete-btn { color: #ffab91 !important; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>虫の詳細: <%= data.name %></h2>
+    <table>
+      <tr><th>名前</th><td><%= data.name %></td></tr>
+      <tr><th>分類</th><td><%= data.type %></td></tr>
+      <tr><th>発見場所</th><td><%= data.place %></td></tr>
+      <tr><th>備考</th><td><%= data.note %></td></tr>
+    </table>
+    <div class="nav-links">
+      <a href="/insects/edit/<%= id %>">編集する</a>
+      <a href="/insects/delete/<%= id %>" class="delete-btn" onclick="return confirm('本当に削除しますか？')">削除する</a>
+      <a href="/insects">虫一覧に戻る</a>
+    </div>
+  </div>
+</body>
+</html>

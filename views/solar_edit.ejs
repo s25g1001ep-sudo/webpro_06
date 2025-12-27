@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %>の編集</title>
+  <style>
+    body { background-color: #0b0d17; color: #e0e0e0; font-family: sans-serif; padding: 20px; }
+    input[type="text"] { width: 100%; padding: 8px; background: #1a1a1a; color: white; border: 1px solid #444; }
+    input[type="submit"] { padding: 10px 20px; background: #1a237e; color: white; border: none; cursor: pointer; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2><%= data.name %>の情報を編集</h2>
+  <form action="/solar/update/<%= id %>" method="POST">
+    <table border="1">
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr><td>ID</td><td><input type="text" name="id" value="<%= data.id %>"></td></tr>
+      <tr><td>天体名</td><td><input type="text" name="name" value="<%= data.name %>"></td></tr>
+      <tr><td>区分</td><td><input type="text" name="type" value="<%= data.type %>"></td></tr>
+      <tr><td>直径(km)</td><td><input type="text" name="diameter" value="<%= data.diameter %>"></td></tr>
+      <tr><td>備考</td><td><input type="text" name="note" value="<%= data.note %>"></td></tr>
+    </table>
+    <input type="submit" value="更新を保存">
+  </form>
+  <br>
+  <a href="/solar" style="color: #4fc3f7;">キャンセルして戻る</a>
+</body>
+</html>

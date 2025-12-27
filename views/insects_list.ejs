@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>大学の虫システム</title>
+  <style>
+    /* 虫システム専用：ネイチャーグリーン・テーマ */
+    body { background-color: #1b2e1b; color: #f1f8e9; font-family: 'Helvetica Neue', Arial, sans-serif; padding: 20px; }
+    h2 { color: #c5e1a5; border-bottom: 3px solid #558b2f; padding-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.05); }
+    th { background-color: #33691e; color: white; padding: 15px; text-align: left; }
+    td { border-bottom: 1px solid #444; padding: 12px; }
+    tr:hover { background-color: rgba(174, 213, 129, 0.1); }
+    a { color: #aed581; text-decoration: none; font-weight: bold; }
+    .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #689f38; color: white; border-radius: 5px; text-decoration: none; }
+    .btn:hover { background-color: #7cb342; }
+  </style>
+</head>
+<body>
+  <h2>大学内で見つけた虫データベース</h2>
+  <table>
+    <tr><th>ID</th><th>名前</th><th>分類</th><th>発見場所</th></tr>
+    <% let number = 0 %>
+    <% for( let row of data ) { %>
+      <tr>
+        <td><%= row.id %></td>
+        <td><a href="/insects/<%= number %>"><%= row.name %></a></td>
+        <td><%= row.type %></td>
+        <td><%= row.place %></td>
+      </tr>
+      <% number += 1 %>
+    <% } %>
+  </table>
+  <a href="/insects/create" class="btn">＋ 新しい虫を登録</a>
+</body>
+</html>

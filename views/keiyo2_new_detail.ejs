@@ -14,6 +14,7 @@
     <tr><td>東京駅からの距離</td><td><%= data.distance %></td></tr>
   </table>
   <a href="/keiyo2/edit/<%= id %>">編集</a>
+  <a href="/keiyo2/delete/<%= id %>" onclick="return confirm('本当に削除しますか？')">削除</a>
   <a href="/keiyo2">駅一覧に戻る</a>
 </body>
 </html>

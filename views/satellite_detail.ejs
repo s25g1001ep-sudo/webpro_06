@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %> - Satellite Detail</title>
+  <style>
+    body { background-color: #0b1424; color: #e0e0e0; font-family: sans-serif; padding: 20px; }
+    .info-card { background: #101c33; border: 1px solid #0277bd; border-radius: 8px; padding: 25px; max-width: 700px; }
+    h2 { color: #81d4fa; margin-top: 0; }
+    th { color: #4fc3f7; text-align: left; width: 180px; padding: 10px 0; border-bottom: 1px solid #1a237e; }
+    td { padding: 10px 0; border-bottom: 1px solid #1a237e; }
+    .nav-links { margin-top: 25px; }
+    .nav-links a { color: #81d4fa; text-decoration: none; margin-right: 20px; border: 1px solid #81d4fa; padding: 5px 15px; border-radius: 4px; }
+    .delete-btn { color: #ff8a80 !important; border-color: #ff8a80 !important; }
+  </style>
+</head>
+<body>
+  <div class="info-card">
+    <h2>衛星詳細スペック: <%= data.name %></h2>
+    <table style="width: 100%;">
+      <tr><th>人工衛星名</th><td><%= data.name %></td></tr>
+      <tr><th>打ち上げ日時</th><td><%= data.date %></td></tr>
+      <tr><th>打ち上げ場所</th><td><%= data.location %></td></tr>
+      <tr><th>ミッション備考</th><td><%= data.note %></td></tr>
+    </table>
+    <div class="nav-links">
+      <a href="/satellite/edit/<%= id %>">編集</a>
+      <a href="/satellite/delete/<%= id %>" class="delete-btn" onclick="return confirm('このデータを破棄しますか？')">削除</a>
+      <a href="/satellite">一覧に戻る</a>
+    </div>
+  </div>
+</body>
+</html>

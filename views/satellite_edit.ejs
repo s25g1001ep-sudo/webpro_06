@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %>の編集</title>
+</head>
+<body style="background-color: #0b1424; color: white; padding: 20px;">
+  <h2>人工衛星情報の編集</h2>
+  <form action="/satellite/update/<%= id %>" method="POST">
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+      <tr><td>人工衛星名</td><td><input type="text" name="name" value="<%= data.name %>" style="width:90%"></td></tr>
+      <tr><td>打ち上げ日時</td><td><input type="text" name="date" value="<%= data.date %>" style="width:90%"></td></tr>
+      <tr><td>打ち上げ場所</td><td><input type="text" name="location" value="<%= data.location %>" style="width:90%"></td></tr>
+      <tr><td>備考</td><td><input type="text" name="note" value="<%= data.note %>" style="width:90%"></td></tr>
+    </table>
+    <input type="submit" value="更新を保存" style="margin-top: 20px; padding: 10px;">
+  </form>
+  <br>
+  <a href="/satellite" style="color: #81d4fa;">キャンセル</a>
+</body>
+</html>

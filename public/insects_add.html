@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>虫の追加</title>
+    <style>
+        body { background-color: #1b2e1b; color: #f1f8e9; padding: 20px; font-family: sans-serif; }
+        h2 { color: #c5e1a5; }
+        form { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 8px; max-width: 500px; }
+        .group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: #aed581; }
+        input[type="text"] { width: 100%; padding: 8px; background: #2e3d2e; color: white; border: 1px solid #558b2f; border-radius: 4px; box-sizing: border-box; }
+        input[type="submit"] { background: #689f38; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; width: 100%; font-size: 1.1em; }
+        .back { display: block; margin-top: 20px; color: #aed581; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h2>新しい虫の発見を報告</h2>
+    <form action="/insects/create" method="POST">
+        <div class="group">
+            <label>名前:</label>
+            <input type="text" name="name" placeholder="例：ナナホシテントウ" required>
+        </div>
+        <div class="group">
+            <label>分類:</label>
+            <input type="text" name="type" placeholder="例：コウチュウ目">
+        </div>
+        <div class="group">
+            <label>発見場所:</label>
+            <input type="text" name="place" placeholder="例：中庭">
+        </div>
+        <div class="group">
+            <label>備考:</label>
+            <input type="text" name="note">
+        </div>
+        <input type="submit" value="リストに追加">
+    </form>
+    <a href="/insects" class="back">← 戻る</a>
+</body>
+</html>
