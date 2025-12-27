@@ -38,15 +38,15 @@ stateDiagram-v2
 
 #### リソースごとの機能の詳細
 
-##### \tentai_add
+##### \add
 ・データの追加
-##### \tentai
+##### \
 ・一覧表示
-##### \tentai_detail
+##### \detail
 ・詳細表示
-##### \tentai_　delete 
+##### \delete 
 ・データの削除
-##### \tentai_edit
+##### \edit
 ・データの編集
 
 
