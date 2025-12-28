@@ -54,15 +54,15 @@ stateDiagram-v2
     state "/solar/create" as /add
     state "/solar/edit/:number" as /edit
     state "/solar/delete/:number" as /delete
-
+    state "保存・更新処理" as 登録
     
     [*] --> /solar: 初期表示（GET）
     /solar --> /detail: 天体名からリンク（GET）
     /detail --> /edit: 編集ボタン（GET）
-    /edit --> 登録: 確定ボタン（POST）
+    /edit --> 登録: 確定ボタン（POST /solar/update/：number）
     登録 --> /solar: GET（リダイレクト）
     /solar --> /add: 追加ボタン（GET）
-    /add --> 登録: 確定ボタン（POST）
+    /add --> 登録: 確定ボタン（POST /solar/create）
     /detail --> /delete: 削除ボタン（GET）
     /delete --> /solar: 削除確定ボタン（GET（リダイレクト））
 ```
@@ -77,15 +77,16 @@ stateDiagram-v2
     state "/satellite/create" as /add
     state "/satellite/edit/:number" as /edit
     state "/satellite/delete/:number" as /delete
+    state "保存・更新処理" as 登録
 
     
     [*] --> /solar: 初期表示（GET）
-    /solar --> /detail: 虫名からリンク（GET）
+    /solar --> /detail: 衛星名からリンク（GET）
     /detail --> /edit: 編集ボタン（GET）
-    /edit --> 登録: 確定ボタン（POST）
+    /edit --> 登録: 確定ボタン（POST /satellite/update/：number）
     登録 --> /solar: GET（リダイレクト）
     /solar --> /add: 追加ボタン（GET）
-    /add --> 登録: 確定ボタン（POST）
+    /add --> 登録: 確定ボタン（POST /satellite/create）
     /detail --> /delete: 削除ボタン（GET）
     /delete --> /solar: 削除確定ボタン（GET（リダイレクト））
 ```
@@ -100,15 +101,16 @@ stateDiagram-v2
     state "/insects/create" as /add
     state "/insects/edit/:number" as /edit
     state "/insects/delete/:number" as /delete
+    state "保存・更新処理" as 登録
 
     
     [*] --> /solar: 初期表示（GET）
-    /solar --> /detail: 天体名からリンク（GET）
+    /solar --> /detail: 虫名からリンク（GET）
     /detail --> /edit: 編集ボタン（GET）
-    /edit --> 登録: 確定ボタン（POST）
+    /edit --> 登録: 確定ボタン（POST /insects/update/：number）
     登録 --> /solar: GET（リダイレクト）
     /solar --> /add: 追加ボタン（GET）
-    /add --> 登録: 確定ボタン（POST）
+    /add --> 登録: 確定ボタン（POST /insects/create）
     /detail --> /delete: 削除ボタン（GET）
     /delete --> /solar: 削除確定ボタン（GET（リダイレクト））
 ```
